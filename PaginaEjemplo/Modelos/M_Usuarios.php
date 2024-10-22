@@ -40,7 +40,36 @@ class M_Usuarios extends Modelo{
         $usuarios = $this->DAO->consultar($SQL);
         
         return $usuarios;
-}
+        }
+
+        public function insertarUsuario($datos=Array()){
+                $nombre='';
+                $apellido_1='';
+                $apellido_2='';
+                $sexo='H';
+                $fecha_Alta=date('Y-m-d');
+                $mail='';
+                $movil='';
+                $login='hjkhkhjkj';
+                $pass='jhkjhkjhjk';
+                $activo='S';
+                extract($datos);
+
+                $pass=MD5($pass);
+            $SQL="INSERT INTO usuarios SET
+                nombre='$nombre',
+                apellido_1='$apellido_1',
+                apellido_2='$apellido_2',
+                sexo='$sexo',
+                fecha_Alta='$fecha_Alta',
+                mail='$mail',
+                movil='$movil',
+                login='$login',
+                pass='$pass',
+                activo='$activo' ";
+            return $this->DAO->insertar($SQL);    
+        }
+
 }
 
 ?>

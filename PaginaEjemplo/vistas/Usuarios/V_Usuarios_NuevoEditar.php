@@ -75,7 +75,7 @@
                 <select id="activo" name="activo" class="form-control">
                     <option value="S">Sí</option>
                     <option value="N">No</option>
-                </select>N
+                </select>
             </div>
         </div>
 
@@ -88,6 +88,7 @@
         <button type="button" onclick="document.getElementById('capaEditarCrear').innerHTML='';"
          class="btn btn-outline-secundary" 
         >Cancelar</button>
+        <span id="msjError" name="msjError" style="color:blue;"></span>
     </div>
 </div>
     </form>
