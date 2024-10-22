@@ -17,14 +17,30 @@
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required />
             </div>
+     
             <div class="form-group col-md-6 col-sm-12">
-                <label for="sexo">Sexo:</label>
-                <select id="sexo" name="sexo" class="form-control" required>
-                    <option value="" selected disabled>Seleccionar</option>
-                    <option value="M">Masculino</option>
-                    <option value="F">Femenino</option>
-                </select>
-            </div>
+    <label for="sexo">Sexo:</label>
+    <div id="sexo" name="sexo" class="d-flex align-items-center" style="border:none; padding-left: 0;">
+        <div class="form-check me-3">
+            <input type="radio" id="masculino" name="sexo" value="M" class="form-check-input" required>
+            <label for="masculino" class="form-check-label">Masculino.</label>
+        </div>
+        <div class="form-check me-3">
+            <input type="radio" id="femenino" name="sexo" value="F" class="form-check-input">
+            <label for="femenino" class="form-check-label">Femenino.</label>
+        </div>
+        <div class="form-check me-3">
+            <input type="radio" id="otro" name="sexo" value="O" class="form-check-input">
+            <label for="otro" class="form-check-label">Otr@/e.</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" id="no_decir" name="sexo" value="N" class="form-check-input">
+            <label for="no_decir" class="form-check-label">Prefiero no decirlo, soy un paquete.</label>
+        </div>
+    </div>
+</div>
+
+
         </div>
 
         <div class="row">
@@ -59,17 +75,21 @@
                 <select id="activo" name="activo" class="form-control">
                     <option value="S">Sí</option>
                     <option value="N">No</option>
-                </select>
+                </select>N
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
-                <button type="button" class="btn btn-outline-primary"
-                    onclick="guardarUsuario('Usuarios','guardarNuevoUsuario','formularioAñadirUsuario','capaResultadoAñadirUsuario')"
-                    >Añadir Usuario</button>
-            </div>
-        </div>
+    <div class="col-lg-12">
+        <button type="button" class="btn btn-outline-primary" 
+        onclick="buscar('Usuarios', 'getVistaListadoUsuarios'
+        , 'formularioBuscar', 'capaResultadosBusqueda')">Guardar</button>
+
+        <button type="button" onclick="document.getElementById('capaEditarCrear').innerHTML='';"
+         class="btn btn-outline-secundary" 
+        >Cancelar</button>
+    </div>
+</div>
     </form>
     <div class="container-fluid" id="capaResultadoAñadirUsuario"></div>
 </div>
